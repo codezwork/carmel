@@ -443,14 +443,14 @@ main {
 .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: 60px 0;
+    gap: 15px;
+    margin: 30px 0;
     position: relative;
 }
 
 .feature-card {
     border-radius: 15px;
-    padding: 40px 30px;
+    padding: 12px 6px;
     color: white;
     text-align: center;
     box-shadow: var(--box-shadow);
@@ -481,18 +481,18 @@ main {
 
 .feature-icon {
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .feature-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .feature-card p {
-    font-size: 15px;
+    font-size: 12px;
     opacity: 0.9;
 }
 
