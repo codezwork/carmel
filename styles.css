@@ -64,7 +64,7 @@ body {
 .mobile-header .logo h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 18px;
     color: var(--primary-dark);
     margin-left: 0.5rem;
 }
