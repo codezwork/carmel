@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory Public Disclosures | Carmel High School Gadchiroli</title>
+    <meta name="description" content="Official public disclosures and mandatory documents for Carmel High School Gadchiroli, including CBSE affiliation, NOC, and safety certificates. Transparency you can trust.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="images/carmel-school-gad.webp">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Carmel High School Gadchiroli",
+    "alternateName": ["Carmel High School & Junior College", "Carmel CBSE Gadchiroli"],
+    "url": "https://carmelcbsegad.org",
+    "logo": "https://carmelcbsegad.org/images/carmel-school-gad.webp",
+    "image": "https://carmelcbsegad.org/images/school-front.webp",
+    "description": "Carmel High School Gadchiroli is a premier CBSE educational institution established in 1992, offering holistic education in Gadchiroli.",
+    "foundingDate": "1992",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhanora Road",
+        "addressLocality": "Gadchiroli",
+        "addressRegion": "Maharashtra",
+        "postalCode": "442605",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94051-55294",
+        "contactType": "admissions",
+        "email": "carmels761@gmail.com",
+        "areaServed": "Gadchiroli",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/carmels761/",
+        "https://www.instagram.com/carmels1992/",
+        "https://www.youtube.com/@carmelhighschoolgadchiroli1837"
+    ],
+    "openingHoursSpecification": [
+        {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:15"
+        }
+    ]
+    }
+    </script>
+    <style>
+        /* Additional styles for custom dropdown */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+        
+        .dropdown-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .dropdown-button:hover {
+            border-color: var(--primary-red);
+        }
+        
+        .dropdown-button:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+        
+        .dropdown-button .selected-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            margin-top: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .dropdown-options.show {
+            display: block;
+        }
+        
+        .dropdown-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-option:hover {
+            background-color: var(--primary-gray);
+        }
+        
+        .dropdown-option.selected {
+            background-color: rgba(255, 107, 107, 0.1);
+            font-weight: 600;
+        }
+        
+        .dropdown-option i {
+            color: var(--primary-red);
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .dropdown-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .dropdown-button:hover {
+            border-color: var(--primary-red);
+        }
+
+        .dropdown-button:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .dropdown-button .selected-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            margin-top: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .dropdown-options.show {
+            display: block;
+        }
+
+        .dropdown-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-option:hover {
+            background-color: var(--primary-gray);
+        }
+
+        .dropdown-option.selected {
+            background-color: rgba(255, 107, 107, 0.1);
+            font-weight: 600;
+        }
+
+        .dropdown-option i {
+            color: var(--primary-red);
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Update pdf-filter to remove the old icon */
+        .pdf-filter {
+            position: relative;
+            background-color: var(--primary-gray);
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin: 0 auto 40px;
+            text-align: left;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Remove the old filter-icon since it's now in the button */
+        .pdf-filter .filter-icon {
+            display: none;
+        }
+
+        /* Mobile responsive for custom dropdown */
+        @media (max-width: 768px) {
+            .dropdown-button {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+            
+            .dropdown-option {
+                padding: 10px 15px;
+            }
+            
+            .dropdown-options {
+                max-height: 250px;
+            }
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Update the mobile-header section in index.html -->
+    <header class="mobile-header">
+        <div class="mobile-header-container"> <!-- Add this wrapper -->
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="10%">
+                    <h2>Carmel High School</h2>
+                </div>
+            </a>
+            <div class="hamburger" id="mobileHamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-links" id="mobileNavLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="disclosures.html" class="active">Disclosures</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contacts.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Desktop Header - Only visible on desktop -->
+    <header class="desktop-header">
+        <!-- Utility Bar -->
+        <div class="utility-bar">
+            <div class="container utility-content">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="5%">
+                    <h2>Carmel High School</h2>
+                </div>
+                </a>
+                <div class="utility-info">
+                    <div class="info-item">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" style="text-decoration: none; cursor: pointer" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <span class="location">Dhanora Road, Dist. Gadchiroli 442605</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <span>Mon-Sat 8:00AM - 5:00PM, <span class="highlight">Sunday CLOSED</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Opaque Navigation Bar -->
+        <nav class="main-nav">
+            <div class="container nav-content">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="disclosures.html" class="active">Disclosures</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Disclosures Hero Section - ONLY text elements -->
+    <section class="disclosures-hero">
+        <div class="container">
+            <div class="disclosures-hero-content">
+                <h1>Official Disclosures & Documents</h1>
+                <p>Transparency is at the core of our institution. Below you can find all official documents, disclosures, and reports pertaining to Carmel High School, Gadchiroli. These documents are available for public viewing in accordance with educational regulations and our commitment to openness.</p>
+            </div>
+        </div>
+    </section>
+    <!-- ... (rest of the headers remain the same) ... -->
+    
+    <!-- Main Content Section -->
+    <section class="disclosures-main">
+        <div class="container">
+            <!-- Custom PDF Filter Dropdown -->
+            <div class="pdf-filter">
+                <div class="custom-dropdown">
+                    <button class="dropdown-button" type="button" id="dropdownButton">
+                        <span class="selected-text">
+                            <i class="fas fa-file-pdf"></i>
+                            <span id="selectedPdfName">CBSE Affiliation Certificate</span>
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-options" id="dropdownOptions">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Single PDF Viewer Container -->
+            <div class="pdf-viewer-container">
+                <h3 id="pdfTitle">CBSE Affiliation Certificate</h3>
+                <div class="pdf-wrapper">
+                    <iframe class="pdf-viewer" id="pdfViewer" src="" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                
+                <!-- PDF Info -->
+                <div class="pdf-info">
+                    <p id="pdfDescription" class="pdf-desc">Official CBSE affiliation certificate for Carmel High School</p>
+                    <a href="#" id="directDownloadLink" class="download-btn" target="_blank">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                <p class="pdf-note">If the PDF doesn't load, <a href="#" id="directViewLink" target="_blank">click here to view it directly on Google Drive</a></p>
+            </div>
+            
+            <div class="disclosures-notes">
+                <h2>Important Notes:</h2>
+                <ul>
+                    <li>All documents are updated annually</li>
+                    <li>For physical copies, please visit the school office during working hours</li>
+                    <li>For any clarification regarding these documents, contact the school administration</li>
+                    <li>These documents are for information purposes only</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="50">
+                        <h2>Carmel High School</h2>
+                    </div>
+                    <p class="footer-description">Providing Quality Education since 1992. We nurture young minds for a brighter future with values, discipline, and academic excellence.</p>
+                    <div class="social-icons">
+                        <a href="tel:9405155294"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/carmels761/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="disclosures.html">Disclosures</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank">
+                            <p><i class="fas fa-map-marker-alt"></i> Carmel High School & Junior College Dhanora Road, Dist. Gadchiroli 442605</p>
+                        </a>
+                        <a href="tel:9405155294" target="_blank">
+                            <p><i class="fas fa-phone"></i>+91 94051-55294</p>
+                        </a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank">
+                            <p><i class="fas fa-envelope"></i>carmels761@gmail.com</p>
+                        </a>
+                        <p><i class="fas fa-clock"></i> Office : 9:00AM - 3:15PM</p>
+                        <p><i class="fas fa-calendar"></i> Sunday: CLOSED</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Carmel High School, Gadchiroli. All rights reserved.</p>
+                <p>Designed by <a href="" style="text-decoration: none; color:azure">MAMBA MEDIA</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // JSON Dictionary for PDF Management
+        const pdfDocuments = [
+            {
+                id: "cbse_affiliation",
+                name: "CBSE Affiliation Certificate",
+                description: "Official CBSE affiliation certificate for Carmel High School",
+                driveId: "1FGmjw21DcXQJh6NcTbdDBTe3sxdAMtBB"
+            },
+            {
+                id: "noc",
+                name: "NOC",
+                description: "NOC Document of Carmel High School Gadchiroli",
+                driveId: "1vXApK_Wfh8_-GOMEU1OdDrENiqUeUlWD"
+            },
+            {
+                id: "general_info",
+                name: "General Information Report",
+                description: "Comprehensive report for the Carmel High School",
+                driveId: "1CqZwxXxgbzhCSnxpcLXh7OBebY-EkQ0G"
+            },
+            {
+                id: "fire_safety",
+                name: "Fire Safety Certificate",
+                description: "Certificate of Fire Safety by Government",
+                driveId: "1HNmxmu_ss0f5fa8sX_rPRa4WaTzN9gKq"
+            },
+            {
+                id: "safety_compliance",
+                name: "Infrastructure & Safety Compliance",
+                description: "Safety audit and infrastructure compliance report",
+                driveId: "1aavTTPpY93OcDqODz1lvQxVtz_EtoDMA"
+            },
+            {
+                id: "water_health_certificate",
+                name: "Water & Sanitary Condition Certificate",
+                description: "Water Safety and Sanitary compliance certificate Issued by Municipal Council Gadchiroli",
+                driveId: "1aavTTPpY93OcDqODz1lvQxVtz_EtoDMA"
+            },
+            {
+                id: "mandatory_disclosure_saras",
+                name: "Mandatory Disclosure SARAS",
+                description: "Important disclosures for System for Assessment of License Fee Revenue and Spectrum Usage Charges",
+                driveId: "125hRAdaMCW568NUFBym7mzk7DhNalBSE"
+            },
+            {
+                id: "school_management_committee",
+                name: "School Managing Committee Details",
+                description: "The document enlists the current members of the School Management Committee for Carmel High School Gadchiroli",
+                driveId: "1OiledYOfJ-ckkl792xdteTZkLuVE1YUf"
+            },
+            {
+                id: "parent_teacher_association",
+                name: "Parent-Teacher Association Carmel",
+                description: "A formal organization of parents, teachers, and sometimes staff, designed to bridge communication",
+                driveId: "1a7WRf_NOOUgb5VRv2d_HwKw7RXZMamce"
+            },
+            {
+                id: "society_registration",
+                name: "Society Registration",
+                description: "Proof of registration of Society under Office of the Registrar of Societies, A.P. Hyderabad.",
+                driveId: "1TbkipkWRgiXafyGd39skigxIrwhF5iQQ"
+            }
+        ];
+
+        // DOM Elements
+        const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownOptions = document.getElementById('dropdownOptions');
+        const selectedPdfName = document.getElementById('selectedPdfName');
+        const pdfTitle = document.getElementById('pdfTitle');
+        const pdfDescription = document.getElementById('pdfDescription');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const directViewLink = document.getElementById('directViewLink');
+        const directDownloadLink = document.getElementById('directDownloadLink');
+
+        // Function to update PDF viewer
+        function updatePDFViewer(pdfDoc) {
+            const previewUrl = `https://drive.google.com/file/d/${pdfDoc.driveId}/preview`;
+            const viewUrl = `https://drive.google.com/file/d/${pdfDoc.driveId}/view`;
+            const downloadUrl = `https://drive.google.com/uc?export=download&id=${pdfDoc.driveId}`;
+            
+            // Update UI
+            pdfTitle.textContent = pdfDoc.name;
+            selectedPdfName.textContent = pdfDoc.name;
+            pdfDescription.textContent = pdfDoc.description;
+            pdfViewer.src = previewUrl;
+            directViewLink.href = viewUrl;
+            directDownloadLink.href = downloadUrl;
+            
+            // Update selected option in dropdown
+            updateSelectedOption(pdfDoc.id);
+        }
+
+        // Function to populate dropdown
+        function populateDropdown() {
+            pdfDocuments.forEach(pdfDoc => {
+                const option = document.createElement('div');
+                option.className = 'dropdown-option';
+                option.dataset.id = pdfDoc.id;
+                option.innerHTML = `
+                    <i class="fas fa-file-pdf"></i>
+                    <span>${pdfDoc.name}</span>
+                `;
+                
+                // Add click event
+                option.addEventListener('click', function() {
+                    const selectedPDF = pdfDocuments.find(pdf => pdf.id === this.dataset.id);
+                    if (selectedPDF) {
+                        updatePDFViewer(selectedPDF);
+                        dropdownOptions.classList.remove('show');
+                    }
+                });
+                
+                dropdownOptions.appendChild(option);
+            });
+        }
+
+        // Function to update selected option styling
+        function updateSelectedOption(selectedId) {
+            // Remove selected class from all options
+            document.querySelectorAll('.dropdown-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to current option
+            const selectedOption = document.querySelector(`.dropdown-option[data-id="${selectedId}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populate dropdown
+            populateDropdown();
+            
+            // Set default to CBSE Affiliation
+            const defaultPDF = pdfDocuments.find(pdf => pdf.id === 'cbse_affiliation') || pdfDocuments[0];
+            updatePDFViewer(defaultPDF);
+            
+            // Toggle dropdown on button click
+            dropdownButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownOptions.classList.toggle('show');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                dropdownOptions.classList.remove('show');
+            });
+            
+            // Prevent dropdown from closing when clicking inside it
+            dropdownOptions.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>

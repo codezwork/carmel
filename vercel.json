@@ -1,8 +1,27 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/submenudisplay/about-us", "destination": "/about.html", "permanent": true },
+    { "source": "/submenudisplay/Affiliation", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Society%20Registration", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/NOC", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Building%20Safety", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Fire%20safety", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Water%20&%20Health", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Detais", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Recognition%20Certificate", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Mandatory%20Public%20Disclosure%20-%20SARAS", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Fees%20Structure", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/SMC", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/SELF%20CRTIFICATION", "destination": "/disclosures.html", "permanent": true },
+    { "source": "/submenudisplay/Calendar%202021-2022", "destination": "/calendar.html", "permanent": true },
+    { "source": "/submenudisplay/LAST%20THREE%20-%20YEAR%20RESULT", "destination": "/results.html", "permanent": true },
+    { "source": "/viewgallery", "destination": "/gallery.html", "permanent": true },
+    { "source": "/submenudisplay/ADMISSION%20PROCEDURE", "destination": "/admissions.html", "permanent": true },
+    { "source": "/submenudisplay/ABSENCE%20AND%20LEAVE", "destination": "/admissions.html", "permanent": true },
+    { "source": "/submenudisplay/STUDY%20AND%20PROMOTION", "destination": "/admissions.html", "permanent": true },
+    { "source": "/submenudisplay/EXAM%20&%20PROMOTIONS", "destination": "/admissions.html", "permanent": true },
+    { "source": "/contactus", "destination": "/contacts.html", "permanent": true }
   ]
 }

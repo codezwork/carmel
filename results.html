@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 Results & Toppers | Carmel High School Gadchiroli</title>
+    <meta name="description" content="View the outstanding CBSE/State board results of Carmel High School. Celebrating our toppers and 100% pass rate. Consistent academic excellence in Gadchiroli.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="images/carmel-school-gad.webp">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Carmel High School Gadchiroli",
+    "alternateName": ["Carmel High School & Junior College", "Carmel CBSE Gadchiroli"],
+    "url": "https://carmelcbsegad.org",
+    "logo": "https://carmelcbsegad.org/images/carmel-school-gad.webp",
+    "image": "https://carmelcbsegad.org/images/school-front.webp",
+    "description": "Carmel High School Gadchiroli is a premier CBSE educational institution established in 1992, offering holistic education in Gadchiroli.",
+    "foundingDate": "1992",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhanora Road",
+        "addressLocality": "Gadchiroli",
+        "addressRegion": "Maharashtra",
+        "postalCode": "442605",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94051-55294",
+        "contactType": "admissions",
+        "email": "carmels761@gmail.com",
+        "areaServed": "Gadchiroli",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/carmels761/",
+        "https://www.instagram.com/carmels1992/",
+        "https://www.youtube.com/@carmelhighschoolgadchiroli1837"
+    ],
+    "openingHoursSpecification": [
+        {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:15"
+        }
+    ]
+    }
+    </script>
+    <style>
+        /* Results Page Specific Styles */
+        .results-hero {
+            padding-top: 140px;
+            padding-bottom: 60px;
+            background-color: var(--primary-gray);
+            text-align: center;
+        }
+        
+        .results-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .results-hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .results-container {
+            padding: 60px 20px;
+            background-color: white;
+        }
+        
+        .academic-year-selector {
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .academic-year-selector h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        
+        .year-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .year-dropdown {
+            display: none;
+        }
+        
+        .year-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--primary-red);
+            background: white;
+            color: var(--primary-red);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .year-btn.active, .year-btn:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .student-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .student-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .result-card:hover .student-image img {
+            transform: scale(1.1);
+        }
+        
+        .student-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .student-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .percentage-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 24px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .student-class {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .rank-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .topper-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #FF0000, #FF6B6B);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .statistics-section {
+            padding: 60px 20px;
+            background-color: var(--primary-gray);
+            border-radius: 20px;
+            margin: 60px 0 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-gray);
+            font-size: 18px;
+            grid-column: 1 / -1;
+        }
+        
+        .loading i {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        /* Mobile Styles for Year Selector */
+        @media (max-width: 768px) {
+            .year-buttons {
+                display: none;
+            }
+            
+            .year-dropdown {
+                display: block;
+                margin: 20px auto 0;
+                max-width: 300px;
+            }
+            
+            .year-dropdown select {
+                width: 100%;
+                padding: 12px 20px;
+                border: 2px solid var(--primary-red);
+                border-radius: 50px;
+                background: white;
+                color: var(--primary-red);
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                appearance: none;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff6b6b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                background-repeat: no-repeat;
+                background-position: right 20px center;
+                background-size: 20px;
+                padding-right: 50px;
+            }
+            
+            .results-hero h1 {
+                font-size: 36px;
+            }
+            
+            .results-hero p {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+
+            .results-hero {
+                display: none;
+            }
+            
+            .results-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 20px 15px;
+            }
+            
+            .stat-number {
+                font-size: 32px;
+            }
+            
+            .academic-year-selector h3 {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .results-grid {
+                gap: 15px;
+            }
+            
+            .student-image {
+                height: 180px;
+            }
+        }
+
+        /* Fix for stats grid overflow on very small screens */
+        @media (max-width: 480px) {
+            .statistics-section {
+                padding: 40px 15px;
+                margin: 40px 0 20px;
+                border-radius: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 20px 15px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .statistics-section {
+                padding: 30px 10px;
+                margin: 30px 0 15px;
+            }
+            
+            .stat-item {
+                padding: 15px 10px;
+            }
+            
+            .stat-number {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="10%">
+                    <h2>Carmel High School</h2>
+                </div>
+            </a>
+            <div class="hamburger" id="mobileHamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-links" id="mobileNavLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="disclosures.html">Disclosures</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contacts.html">Contact</a>
+                <a href="results.html" class="active">Results</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="utility-bar">
+            <div class="container utility-content">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="5%">
+                        <h2>Carmel High School</h2>
+                    </div>
+                </a>
+                <div class="utility-info">
+                    <div class="info-item">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" style="text-decoration: none; cursor: pointer" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <span class="location">Dhanora Road, Dist. Gadchiroli 442605</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <span>Mon-Sat 8:00AM - 5:00PM, <span class="highlight">Sunday CLOSED</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container nav-content">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="disclosures.html">Disclosures</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="results.html" class="active">Results</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Results Hero Section (Simplified) -->
+    <section class="results-hero">
+        <div class="container">
+            <h1>Class 10th Results</h1>
+            <p>Celebrating the outstanding achievements of our Class 10 students. We take pride in their hard work and dedication that has led to these remarkable results.</p>
+        </div>
+    </section>
+    
+    <!-- Results Container -->
+    <section class="results-container">
+        <div class="container">
+            <!-- Academic Year Selector (Now in results container) -->
+            <div class="academic-year-selector">
+                <h3>Select Academic Year</h3>
+                
+                <!-- Desktop: Buttons -->
+                <div class="year-buttons">
+                    <button class="year-btn" data-year="2024">2023-2024</button>
+                    <button class="year-btn active" data-year="2023">2022-2023</button>
+                    <button class="year-btn" data-year="2022">2021-2022</button>
+                    <button class="year-btn" data-year="2021">2020-2021</button>
+                </div>
+                
+                <!-- Mobile: Dropdown -->
+                <div class="year-dropdown">
+                    <select id="yearSelect">
+                        <option value="2024">2023-2024</option>
+                        <option value="2023" selected>2022-2023</option>
+                        <option value="2022">2021-2022</option>
+                        <option value="2021">2020-2021</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Results Grid -->
+            <div id="resultsGrid" class="results-grid">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading results...</p>
+                </div>
+            </div>
+            
+            <!-- Statistics Section (Moved below results) -->
+            <div class="statistics-section">
+                <h2 class="section-title">Result Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalStudents">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="averagePercentage">0%</div>
+                        <div class="stat-label">Average Percentage</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="distinctions">0</div>
+                        <div class="stat-label">Distinctions (90%+)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="firstClass">0</div>
+                        <div class="stat-label">First Class (75%+)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="50">
+                        <h2>Carmel High School</h2>
+                    </div>
+                    <p class="footer-description">Providing Quality Education since 1992. We nurture young minds for a brighter future with values, discipline, and academic excellence.</p>
+                    <div class="social-icons">
+                        <a href="tel:9405155294"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/carmels761/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="disclosures.html">Disclosures</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank">
+                            <p><i class="fas fa-map-marker-alt"></i> Carmel High School & Junior College Dhanora Road, Dist. Gadchiroli 442605</p>
+                        </a>
+                        <a href="tel:9405155294" target="_blank">
+                            <p><i class="fas fa-phone"></i>+91 94051-55294</p>
+                        </a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank">
+                            <p><i class="fas fa-envelope"></i>carmels761@gmail.com</p>
+                        </a>
+                        <p><i class="fas fa-clock"></i> Office : 9:00AM - 3:15PM</p>
+                        <p><i class="fas fa-calendar"></i> Sunday: CLOSED</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Carmel High School, Gadchiroli. All rights reserved.</p>
+                <p>Designed by <a href="" style="text-decoration: none; color:azure">MAMBA MEDIA</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Results JSON Data Structure
+        const resultsData = {
+            "2023": {
+                "10": {
+                    "totalStudents": 85,
+                    "averagePercentage": 89.2,
+                    "distinctions": 72,
+                    "firstClass": 13,
+                    "students": [
+                        {
+                            "id": 1,
+                            "name": "Rahul Sharma",
+                            "percentage": 96.8,
+                            "image": "https://randomuser.me/api/portraits/men/1.jpg",
+                            "rank": 1
+                        },
+                        {
+                            "id": 2,
+                            "name": "Priya Patel",
+                            "percentage": 95.4,
+                            "image": "https://randomuser.me/api/portraits/women/2.jpg",
+                            "rank": 2
+                        },
+                        {
+                            "id": 3,
+                            "name": "Amit Kumar",
+                            "percentage": 94.2,
+                            "image": "https://randomuser.me/api/portraits/men/3.jpg",
+                            "rank": 3
+                        },
+                        {
+                            "id": 4,
+                            "name": "Sneha Deshmukh",
+                            "percentage": 93.6,
+                            "image": "https://randomuser.me/api/portraits/women/4.jpg",
+                            "rank": 4
+                        },
+                        {
+                            "id": 5,
+                            "name": "Vikram Singh",
+                            "percentage": 92.8,
+                            "image": "https://randomuser.me/api/portraits/men/5.jpg",
+                            "rank": 5
+                        },
+                        {
+                            "id": 6,
+                            "name": "Anjali Joshi",
+                            "percentage": 91.4,
+                            "image": "https://randomuser.me/api/portraits/women/6.jpg",
+                            "rank": 6
+                        },
+                        {
+                            "id": 7,
+                            "name": "Rajesh Mehta",
+                            "percentage": 90.2,
+                            "image": "https://randomuser.me/api/portraits/men/7.jpg",
+                            "rank": 7
+                        },
+                        {
+                            "id": 8,
+                            "name": "Pooja Reddy",
+                            "percentage": 89.8,
+                            "image": "https://randomuser.me/api/portraits/women/8.jpg",
+                            "rank": 8
+                        }
+                    ]
+                }
+            },
+            "2022": {
+                "10": {
+                    "totalStudents": 80,
+                    "averagePercentage": 87.5,
+                    "distinctions": 65,
+                    "firstClass": 15,
+                    "students": []
+                }
+            },
+            "2021": {
+                "10": {
+                    "totalStudents": 75,
+                    "averagePercentage": 85.8,
+                    "distinctions": 60,
+                    "firstClass": 15,
+                    "students": []
+                }
+            },
+            "2024": {
+                "10": {
+                    "totalStudents": 88,
+                    "averagePercentage": 90.1,
+                    "distinctions": 78,
+                    "firstClass": 10,
+                    "students": []
+                }
+            }
+        };
+
+        // DOM Elements
+        let currentYear = "2023";
+
+        // Initialize Results Page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadResults(currentYear);
+            
+            // Year buttons event listeners (Desktop)
+            document.querySelectorAll('.year-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentYear = this.getAttribute('data-year');
+                    loadResults(currentYear);
+                    
+                    // Update dropdown selection
+                    document.getElementById('yearSelect').value = currentYear;
+                });
+            });
+            
+            // Dropdown event listener (Mobile)
+            document.getElementById('yearSelect').addEventListener('change', function() {
+                currentYear = this.value;
+                loadResults(currentYear);
+                
+                // Update buttons selection
+                document.querySelectorAll('.year-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-year') === currentYear) {
+                        btn.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update mobile menu for this page
+            const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+            mobileLinks.forEach(link => {
+                if (link.getAttribute('href') === 'results.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Load results function
+        function loadResults(year) {
+            const resultsGrid = document.getElementById('resultsGrid');
+            const data = resultsData[year]?.[10];
+            
+            if (!data) {
+                resultsGrid.innerHTML = '<div class="loading"><i class="fas fa-exclamation-circle"></i><p>No results available for this selection</p></div>';
+                updateStatistics(0, 0, 0, 0);
+                return;
+            }
+            
+            // Update statistics
+            updateStatistics(
+                data.totalStudents,
+                data.averagePercentage,
+                data.distinctions,
+                data.firstClass
+            );
+            
+            // Display students
+            if (data.students && data.students.length > 0) {
+                let html = '';
+                data.students.forEach(student => {
+                    html += `
+                    <div class="result-card">
+                        ${student.rank === 1 ? '<div class="topper-badge">School Topper</div>' : ''}
+                        <div class="rank-badge">${student.rank}</div>
+                        <div class="student-image">
+                            <img src="${student.image}" alt="${student.name}">
+                        </div>
+                        <div class="student-info">
+                            <div class="student-name">${student.name}</div>
+                            <div class="percentage-badge">${student.percentage}%</div>
+                            <div class="student-class">Class 10 (SSC)</div>
+                        </div>
+                    </div>
+                    `;
+                });
+                resultsGrid.innerHTML = html;
+            } else {
+                resultsGrid.innerHTML = '<div class="loading"><i class="fas fa-info-circle"></i><p>Detailed student results will be updated soon</p></div>';
+            }
+        }
+
+        // Update statistics with animation
+        function updateStatistics(total, average, distinctions, firstClass) {
+            animateCounter('totalStudents', total);
+            animateCounter('averagePercentage', average, true);
+            animateCounter('distinctions', distinctions);
+            animateCounter('firstClass', firstClass);
+        }
+
+        // Animate counter function
+        function animateCounter(elementId, targetValue, isPercentage = false) {
+            const element = document.getElementById(elementId);
+            const duration = 1500;
+            const step = targetValue / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= targetValue) {
+                    current = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = isPercentage ? 
+                    Math.round(current) + '%' : 
+                    Math.round(current);
+            }, 16);
+        }
+    </script>
+</body>
+</html>

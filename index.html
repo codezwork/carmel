@@ -3,23 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carmel High School, Gadchiroli</title>
+    <title>Carmel High School | Best CBSE School in Gadchiroli</title>
+    <meta name="description" content="Carmel High School is a top-ranked school in Gadchiroli offering modern facilities, smart classrooms, and Scout & Guide. Admissions open for 2026.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/carmel-school-gad.png">
+    <link rel="icon" type="image/webp" href="images/carmel-school-gad.webp">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Carmel High School Gadchiroli",
+    "alternateName": ["Carmel High School & Junior College", "Carmel CBSE Gadchiroli"],
+    "url": "https://carmelcbsegad.org",
+    "logo": "https://carmelcbsegad.org/images/carmel-school-gad.webp",
+    "image": "https://carmelcbsegad.org/images/school-front.webp",
+    "description": "Carmel High School Gadchiroli is a premier CBSE educational institution established in 1992, offering holistic education in Gadchiroli.",
+    "foundingDate": "1992",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhanora Road",
+        "addressLocality": "Gadchiroli",
+        "addressRegion": "Maharashtra",
+        "postalCode": "442605",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94051-55294",
+        "contactType": "admissions",
+        "email": "carmels761@gmail.com",
+        "areaServed": "Gadchiroli",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/carmels761/",
+        "https://www.instagram.com/carmels1992/",
+        "https://www.youtube.com/@carmelhighschoolgadchiroli1837"
+    ],
+    "openingHoursSpecification": [
+        {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:15"
+        }
+    ]
+    }
+    </script>
 </head>
 <body>
     <!-- Mobile Header - Only visible on mobile/tablet -->
     <!-- Update the mobile-header section in index.html -->
     <header class="mobile-header">
         <div class="mobile-header-container"> <!-- Add this wrapper -->
-            <div class="logo">
-                <img src="images/carmel-school-gad.png" alt="" width="10%">
-                <h2>Carmel High School</h2>
-            </div>
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="10%">
+                    <h2>Carmel High School</h2>
+                </div>
+            </a>
             <div class="hamburger" id="mobileHamburger">
                 <span></span>
                 <span></span>
@@ -29,62 +74,25 @@
         <nav class="mobile-nav">
             <div class="mobile-nav-links" id="mobileNavLinks">
                 <a href="#" class="active">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Disclosures</a>
-                <a href="#">Gallery</a>
-                <a href="#">Downloads</a>
-                <a href="#">Contact</a>
+                <a href="about.html">About Us</a>
+                <a href="disclosures.html">Disclosures</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contacts.html">Contact</a>
             </div>
         </nav>
     </header>
-    
-    <!-- Hero Section with Slideshow -->
-    <section class="hero-section">
-        <!-- Hero Image Background with Slideshow -->
-        <div class="hero-background" id="heroBackground">
-            <!-- Slideshow images -->
-            <div class="slide active" style="background-image: url('images/school-front.png');"></div>
-            <div class="slide" style="background-image: url('images/love-carmel.png');"></div>
-            <div class="slide" style="background-image: url('images/discussion-room.png');"></div>
-            <div class="slide" style="background-image: url('images/school-front.png');"></div>
-            <div class="slide" style="background-image: url('images/school-side.png');"></div>
-            
-            <!-- Overlay for better text readability -->
-            <div class="hero-overlay"></div>
-        </div>
-        
-        <!-- Hero Content -->
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-subtitle">Welcome To Our Carmel</div>
-                <h1 class="hero-title">Bring Fun Life To Your Kids</h1>
-                <p class="hero-description">Amazing Playground for Intellectual Development</p>
-                <button class="cta-button" id="learnMoreBtn">LEARN MORE</button>
-            </div>
-        </div>
-        
-        <!-- Slideshow Controls (Inside Hero Section) -->
-        <div class="slideshow-controls">
-            <button class="slide-control prev" id="prevSlide">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="slide-indicators" id="slideIndicators">
-                <!-- Indicators will be generated by JavaScript -->
-            </div>
-            <button class="slide-control next" id="nextSlide">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </section>
-    
+
     <!-- Desktop Header - Only visible on desktop -->
     <header class="desktop-header">
         <!-- Utility Bar -->
         <div class="utility-bar">
             <div class="container utility-content">
-                <div class="logo">
-                    <img src="images/carmel-school-gad.png" alt="" width="5%">
-                    <h2>Carmel High School</h2></div>
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="5%">
+                    <h2>Carmel High School</h2>
+                </div>
+                </a>
                 <div class="utility-info">
                     <div class="info-item">
                         <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" style="text-decoration: none; cursor: pointer" target="_blank">
@@ -105,66 +113,430 @@
             <div class="container nav-content">
                 <ul class="nav-links">
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Disclosures</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Downloads</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="disclosures.html">Disclosures</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     
+    <!-- Hero Section with Slideshow -->
+    <section class="hero-section">
+        <!-- Hero Image Background with Slideshow -->
+        <div class="hero-background" id="heroBackground">
+            <!-- Slideshow images -->
+            <div class="slide active" style="background-image: url('images/school-front.webp');"></div>
+            <div class="slide" style="background-image: url('images/love-carmel.webp');"></div>
+            <div class="slide" style="background-image: url('images/discussion-room.webp');"></div>
+            <div class="slide" style="background-image: url('images/school-side.webp');"></div>
+            
+            <!-- Overlay for better text readability -->
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">Welcome To our Carmel</div>
+                <h1 class="hero-title">The Best CBSE School in Gadchiroli</h1>
+                <p class="hero-description">Amazing Playground for Intellectual Development</p>
+                <button class="cta-button" id="learnMoreBtn">LEARN MORE</button>
+            </div>
+        </div>
+        
+        <!-- Slideshow Controls (Inside Hero Section) -->
+        <div class="slideshow-controls">
+            <button class="slide-control prev" id="prevSlide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slide-indicators" id="slideIndicators">
+                <!-- Indicators will be generated by JavaScript -->
+            </div>
+            <button class="slide-control next" id="nextSlide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+        
     <!-- Main Content (Outside Hero Section) -->
     <main class="container">
-        <!-- Feature Cards Section -->
+        <!-- Feature Cards Section (Already exists - keeping it) -->
+        <!-- Feature Cards Section (Updated with hover images) -->
         <section class="features">
             <div class="feature-card card1">
-                <div class="feature-icon">
-                    <i class="fas fa-dice"></i>
+                <div class="feature-hover-image">
+                    <img src="images/chemistry-lab.webp" alt="chemistry lab of Carmel High School Gadchiroli">
                 </div>
-                <h3>Indoor Games</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nuncium, moluta, nec anim id culpa.</p>
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <h3>Chemistry Lab</h3>
+                    <p>Chemistry Lab: "A fully equipped facility where students safely explore chemical reactions and analyze properties through hands-on experimentation and research.</p>
+                </div>
             </div>
             
             <div class="feature-card card2">
-                <div class="feature-icon">
-                    <i class="fas fa-futbol"></i>
+                <div class="feature-hover-image">
+                    <img src="images/biology-lab.webp" alt="biology lab of Carmel High School Gadchiroli">
                 </div>
-                <h3>Outdoor Game And Event</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nuncium, moluta, nec anim id culpa.</p>
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3>Biology Lab</h3>Featuring advanced microscopes and anatomical models, our lab allows students to investigate the complexities of life sciences and biological systems.</p>
+                </div>
             </div>
             
             <div class="feature-card card3">
-                <div class="feature-icon">
-                    <i class="fas fa-campground"></i>
+                <div class="feature-hover-image">
+                    <img src="images/physics-lab.webp" alt="physics lab of Carmel High School Gadchiroli">
                 </div>
-                <h3>Camping for Kids</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nuncium, moluta, nec anim id culpa.</p>
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3>Physics Lab</h3>
+                    <p>A space designed for scientific inquiry where students test theories of mechanics, optics, and electricity using modern precision instruments.</p>
+                </div>
             </div>
 
             <div class="feature-card card4">
-                <div class="feature-icon">
-                    <i class="fa-solid fa-person-harassing"></i>
+                <div class="feature-hover-image">
+                    <img src="images/scouts-guide.webp" alt="Scout & Guide in Carmel High School Gadchiroli">
                 </div>
-                <h3>Scout & Guide</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nuncium, moluta, nec anim id culpa.</p>
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-person-hiking"></i>
+                    </div>
+                    <h3>Scout & Guide</h3>
+                    <p>Fostering discipline, leadership, and teamwork, our active unit prepares students for community service and builds essential life skills.</p>
+                </div>
             </div>
         </section>
         
-        <!-- Additional content can go here -->
-    </main> 
+        <!-- About & Principal's Message Section -->
+        <section class="about-principal">
+            <div class="about-content">
+                <h2>About Carmel High School Gadchiroli</h2>
+                <p>
+                    Founded in 1992, Carmel High School, Gadchiroli is guided by the CMI motto, "Guru Vachanam Mama Deepam" (Word of the Guru is my Light). We are committed to holistic education that blends academic rigor with strong character formation, developing disciplined, responsible, and socially conscious individuals.
+                </p>
+                <p>
+                    Our nurturing environment, aligned with the CBSE curriculum, focuses on the all-round growth of each student. We aim to unlock every child's potential, fostering the intellectual, moral, and physical development needed to become well-rounded citizens prepared for life's creative and truthful challenges.
+                </p>
+                <a href="about.html" class="read-more">Read More / About Us</a>
+            </div>
+            <div class="principal-message">
+                <div class="principal-card">
+                    <div class="principal-header">
+                        <img src="https://images.pexels.com/photos/35290213/pexels-photo-35290213.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Principal of Carmel High School Gadchiroli" width="250" height="350" class="principal-image">
+                        <div class="principal-info">
+                            <h3>Principal's Message</h3>
+                            <h4>Rev. Fr. Meljo Cherian CMI</h4>
+                            <span>Principal</span>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "At Carmel High School and Junior college Gadchiroli, we are committed to providing a safe, nurturing and inclusive environment where every individual is valued and supported in their pursuit of academic excellence and personal growth. Our dedicated team of educators is prepared to inspire and guide our students on their educational journey, fostering curiosity, creativity, and critical thinking skills along the way."
+                    </blockquote>
+                    <div class="principal-signature">
+                        <span>Best regards,</span>
+                        <span class="signature">Rev. Fr. Meljo Cherian CMI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Academic Programs Section -->
+        <!-- Academic Programs Section (Updated with images) -->
+        <section class="academic-programs">
+            <h2 class="section-title">Carmel Academic Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://lh3.googleusercontent.com/d/1esbsybUOPdCssDv2hAScv491Cb2FRvzI=w400" alt="Primary Section in Carmel High School Gadchiroli">
+                    </div>
+                    <div class="program-content">
+                        <h3>Pre - Primary Classes</h3>
+                        <p>Our Primary Section focuses on foundational learning with English Medium instruction, activity-based learning approaches, computer basics, and creative arts & crafts programs designed for young learners.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://lh3.googleusercontent.com/d/1cV9qXRCRQN-shvDgm8BsAIp7NzAYp6Cs=w400" alt="Secondary Section in Carmel High School Gadchiroli">
+                    </div>
+                    <div class="program-content">
+                        <h3>Primary & Secondary Education</h3>
+                        <p>The Secondary Section follows the CBSE Syllabus offering both Science and Commerce streams, complemented by comprehensive sports training and diverse cultural activities for holistic development.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/carmel-junior-college.webp" alt="Co-curricular in Carmel High School Gadchiroli">
+                    </div>
+                    <div class="program-content">
+                        <h3>Junior College</h3>
+                        <p>Carmel Junior College Gadchiroli offers immersive education nuturing the students empowering them to take on competitve exams like JEE, NEET and other exams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Choose Our School Section -->
+        <section class="why-choose">
+            <h2 class="section-title">Why Choose Carmel High School Gadchiroli</h2>
+            <div class="why-choose-grid">
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Experienced Faculty</h3>
+                    <p>Highly qualified and experienced teachers dedicated to student success.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>Advance facilities & technology-enabled classrooms.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Consistent track record of outstanding academic achievements with 100% precision.</p>
+                </div>
+                <div class="why-choose-item">
+                    <div class="why-choose-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Carmel Legecy</h3>
+                    <p>Over 30+ years of Legecy of Carmel in uplifting Student Excellence.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Facilities Highlight Carousel -->
+        <section class="facilities-carousel-section">
+            <h2 class="section-title">Facilities Highlight</h2>
+            <div class="facilities-carousel" id="facilities-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="images/school-front.webp" alt="School Building of Carmel High School Gadchiroli" width="520" height="650">
+                        <div class="slide-overlay">
+                            <h3>Modern School Building</h3>
+                            <p>Spacious and well-ventilated classrooms</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/discussion-room.webp" alt="Library in Carmel High School Gadchiroli" width="975" height="650">
+                        <div class="slide-overlay">
+                            <h3>Discussion Room</h3>
+                            <p>A workspace to explore & debate thoughtprovoking topics</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/love-carmel.webp" alt="Playground in Carmel High School Gadchiroli" width="1157" height="650">
+                        <div class="slide-overlay">
+                            <h3>Playground</h3>
+                            <p>Large playground for sports and activities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0"></button>
+                    <button class="indicator" data-slide="1"></button>
+                    <button class="indicator" data-slide="2"></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Student Life & Activities -->
+        <section class="student-life">
+            <h2 class="section-title">Student Life at Carmel</h2>
+            <div class="activities-grid">
+                <div class="activity-card large">
+                    <img src="https://lh3.googleusercontent.com/d/1F4SffSlCrD6jUBkHGl0HDYUy3x_3BnA-=w400" alt="Cultural Events at Carmel High School Gadchiroli" width="434" height="650">
+                    <div class="activity-overlay">
+                        <div class="activity-date">25 DEC</div>
+                        <h3>Annual Day</h3>
+                        <p>Annual cultural festival showcasing student talents</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://lh3.googleusercontent.com/d/1710DT91TNDmDYBENQSIT0wbPP_8enOqi=w400" alt="Sports day at Carmel High School Gadchiroli" width="977" height="650">
+                    <div class="activity-overlay">
+                        <div class="activity-date">06 DEC</div>
+                        <h3>Sports Day</h3>
+                        <p>Annual sports competition and activities</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://lh3.googleusercontent.com/d/1Des36NF4wr89HsaqqndjUj1gZqBydYzw=w400" alt="Science Fair at Carmel High School Gadchiroli" width="433" height="650">
+                    <div class="activity-overlay">
+                        <div class="activity-date">17 NOV</div>
+                        <h3>Science Exhibition</h3>
+                        <p>Student science exhibition and competition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Statistics Section -->
+        <section class="statistics-section">
+            <div class="statistics-background">
+                <img src="images/school-front.webp" alt="Campus of Carmel High School Gadchiroli" width="649" height="650">
+                <div class="statistics-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="statistics-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="33">0</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="18000">0</div>
+                        <div class="stat-label">Number of Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="75">0</div>
+                        <div class="stat-label">Faculty Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Success Rate %</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Photo Gallery Preview -->
+        <section class="gallery-preview">
+            <h2 class="section-title">Photo Gallery Preview</h2>
+            <a href="gallery.html" style="text-decoration: none;">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/school-front.webp" alt="Campus Front of Carmel High School Gadchiroli" width="433" height="650">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/love-carmel.webp" alt="Students in Carmel High School Gadchiroli" width="975" height="650">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/discussion-room.webp" alt="Classrooms in Carmel High School Gadchiroli" width="434" height="650">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/school-side.webp" alt="Campus Side of Carmel High School Gadchiroli" width="977" height="650">
+                    </div>
+                </div>
+            </a>
+            <div class="gallery-navigation">
+                <button class="gallery-btn" onclick="window.location.href='gallery.html'">View All Photos</button>
+            </div>
+        </section>
+        
+        <!-- Quick Links Section -->
+        <section class="quick-links">
+            <h2 class="section-title">Quick Links Section</h2>
+            <div class="quick-links-grid">
+                <a href="admissions.html" style="text-decoration: none;">
+                    <div class="quick-link-item">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Admissions</h3>
+                        <p>Apply Now</p>
+                    </div>
+                </a>
+
+                <a href="results.html" style="text-decoration: none;">
+                    <div class="quick-link-item">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Results</h3>
+                        <p>Check Results</p>
+                    </div>
+                </a>
+
+                <a href="disclosures.html" style="text-decoration: none;">
+                    <div class="quick-link-item">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Downloads</h3>
+                        <p>Forms & Documents</p>
+                    </div>
+                </a>
+                
+                <a href="calendar.html" style="text-decoration: none;">
+                    <div class="quick-link-item">
+                        <div class="quick-link-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Academic Calendar</h3>
+                        <p>Important Dates</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
     
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="copyright">
-                &copy; 2025 7Brothers.Co. All Rights Reserved.
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="50">
+                        <h2>Carmel High School</h2>
+                    </div>
+                    <p class="footer-description">Providing Quality Education since 1992. We nurture young minds for a brighter future with values, discipline, and academic excellence.</p>
+                    <div class="social-icons">
+                        <a href="tel:9405155294"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/carmels761/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="disclosures.html">Disclosures</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank">
+                            <p><i class="fas fa-map-marker-alt"></i> Carmel High School & Junior College Dhanora Road, Dist. Gadchiroli 442605</p>
+                        </a>
+                        <a href="tel:9405155294" target="_blank">
+                            <p><i class="fas fa-phone"></i>+91 94051-55294</p>
+                        </a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank">
+                            <p><i class="fas fa-envelope"></i>carmels761@gmail.com</p>
+                        </a>
+                        <p><i class="fas fa-clock"></i> Office : 9:00AM - 3:15PM</p>
+                        <p><i class="fas fa-calendar"></i> Sunday: CLOSED</p>
+                    </div>
+                </div>
             </div>
-            <div class="social-icons">
-                <a href="tel:7132232476"><i class="fa-solid fa-phone"></i></a>
-                <a href="https://maps.app.goo.gl/y5Hg6TQZRejVU8Br6" target="_blank"><i class="fa-solid fa-location-arrow"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Carmel High School, Gadchiroli. All rights reserved.</p>
+                <p>Designed by <a href="" style="text-decoration: none; color:azure">MAMBA MEDIA</a></p>
             </div>
         </div>
     </footer>

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar 2024-25 | Carmel High School Gadchiroli</title>
+    <meta name="description" content="Stay updated with the Carmel High School academic calendar. Check dates for exams, holidays, cultural events, and parent-teacher meetings for the current academic year.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="images/carmel-school-gad.webp">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Carmel High School Gadchiroli",
+    "alternateName": ["Carmel High School & Junior College", "Carmel CBSE Gadchiroli"],
+    "url": "https://carmelcbsegad.org",
+    "logo": "https://carmelcbsegad.org/images/carmel-school-gad.webp",
+    "image": "https://carmelcbsegad.org/images/school-front.webp",
+    "description": "Carmel High School Gadchiroli is a premier CBSE educational institution established in 1992, offering holistic education in Gadchiroli.",
+    "foundingDate": "1992",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhanora Road",
+        "addressLocality": "Gadchiroli",
+        "addressRegion": "Maharashtra",
+        "postalCode": "442605",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94051-55294",
+        "contactType": "admissions",
+        "email": "carmels761@gmail.com",
+        "areaServed": "Gadchiroli",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/carmels761/",
+        "https://www.instagram.com/carmels1992/",
+        "https://www.youtube.com/@carmelhighschoolgadchiroli1837"
+    ],
+    "openingHoursSpecification": [
+        {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:15"
+        }
+    ]
+    }
+    </script>
+    <style>
+        /* Calendar Page Specific Styles */
+        .calendar-hero {
+            padding-top: 140px;
+            padding-bottom: 60px;
+            background-color: var(--primary-gray);
+            text-align: center;
+        }
+        
+        .calendar-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .calendar-hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .calendar-container {
+            padding: 60px 20px;
+            background-color: white;
+            min-height: 800px;
+        }
+        
+        .academic-year-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .year-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .month-navigation {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-red);
+            background: white;
+            color: var(--primary-red);
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+        
+        .current-month {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .calendar-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .calendar-header {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .day-header {
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-auto-rows: minmax(120px, auto);
+        }
+        
+        .calendar-day {
+            border: 1px solid #f0f0f0;
+            padding: 15px;
+            min-height: 120px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .calendar-day:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1;
+        }
+        
+        .day-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .day-number.today::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--primary-red);
+            border-radius: 2px;
+        }
+        
+        .day-events {
+            margin-top: 10px;
+        }
+        
+        .event {
+            background: var(--primary-gray);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .event.holiday {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+        }
+        
+        .event.exam {
+            background: linear-gradient(135deg, #26C6DA, #80DEEA);
+            color: white;
+        }
+        
+        .event.function {
+            background: linear-gradient(135deg, #66BB6A, #A5D6A7);
+            color: white;
+        }
+        
+        .event.other {
+            background: linear-gradient(135deg, #FFA726, #FFCC80);
+            color: white;
+        }
+        
+        .empty-day {
+            background-color: #f9f9f9;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .holiday {
+            background-color: #FFF5F5 !important;
+        }
+        
+        .holiday .day-number {
+            color: #FF6B6B;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--primary-gray);
+            border-radius: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+        
+        .legend-text {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        
+        .upcoming-events {
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--primary-gray);
+            border-radius: 20px;
+        }
+        
+        .upcoming-events h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .event-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .event-date {
+            text-align: center;
+            min-width: 70px;
+        }
+        
+        .event-day {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-red);
+        }
+        
+        .event-month {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+        
+        .event-details h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .event-details p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        
+        /* Mobile Styles - Calendar grid adjustments */
+        @media (max-width: 768px) {
+            .calendar-hero h1 {
+                font-size: 36px;
+            }
+            
+            .academic-year-selector {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .year-title {
+                font-size: 24px;
+            }
+            
+            .current-month {
+                min-width: 150px;
+                font-size: 18px;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            /* Calendar grid for mobile */
+            .calendar-header {
+                grid-template-columns: repeat(7, 1fr);
+                display: grid !important; /* Force display grid on mobile */
+            }
+            
+            .day-header {
+                padding: 10px 5px;
+                font-size: 12px;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+                display: grid !important; /* Force display grid on mobile */
+                grid-auto-rows: minmax(80px, auto);
+            }
+            
+            .calendar-day {
+                min-height: 80px;
+                padding: 8px 5px;
+                overflow: hidden;
+            }
+            
+            .day-number {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            
+            .event {
+                font-size: 9px;
+                padding: 3px 5px;
+                margin-bottom: 2px;
+            }
+            
+            .event i {
+                font-size: 8px;
+            }
+            
+            /* Hide day names before pseudo-element on mobile since we have header */
+            .calendar-day::before {
+                display: none;
+            }
+            
+            /* Upcoming events mobile fix */
+            .upcoming-events {
+                padding: 20px;
+                margin-top: 40px;
+            }
+            
+            .upcoming-events h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            .events-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .event-item {
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .event-date {
+                min-width: 60px;
+            }
+            
+            .event-day {
+                font-size: 22px;
+            }
+            
+            .event-month {
+                font-size: 12px;
+            }
+            
+            .event-details h3 {
+                font-size: 16px;
+            }
+            
+            .event-details p {
+                font-size: 12px;
+            }
+
+            .calendar-hero {
+                display: none;
+            }
+        }
+        
+        /* Small mobile adjustments */
+        @media (max-width: 480px) {
+            .calendar-grid {
+                grid-auto-rows: minmax(70px, auto);
+            }
+            
+            .calendar-day {
+                min-height: 70px;
+                padding: 5px 3px;
+            }
+            
+            .day-number {
+                font-size: 14px;
+            }
+            
+            .event {
+                font-size: 8px;
+                padding: 2px 3px;
+            }
+            
+            .legend {
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .legend-item {
+                gap: 5px;
+            }
+            
+            .legend-color {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .legend-text {
+                font-size: 12px;
+            }
+        }
+        
+        /* Extra small mobile adjustments */
+        @media (max-width: 360px) {
+            .calendar-header .day-header {
+                font-size: 10px;
+                padding: 8px 2px;
+            }
+            
+            .calendar-grid {
+                grid-auto-rows: minmax(60px, auto);
+            }
+            
+            .calendar-day {
+                min-height: 60px;
+                padding: 3px 2px;
+            }
+            
+            .day-number {
+                font-size: 12px;
+            }
+            
+            .event {
+                font-size: 7px;
+                padding: 1px 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="10%">
+                    <h2>Carmel High School</h2>
+                </div>
+            </a>
+            <div class="hamburger" id="mobileHamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-links" id="mobileNavLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="disclosures.html">Disclosures</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contacts.html">Contact</a>
+                <a href="calendar.html" class="active">Calendar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="utility-bar">
+            <div class="container utility-content">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="5%">
+                        <h2>Carmel High School</h2>
+                    </div>
+                </a>
+                <div class="utility-info">
+                    <div class="info-item">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" style="text-decoration: none; cursor: pointer" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <span class="location">Dhanora Road, Dist. Gadchiroli 442605</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <span>Mon-Sat 8:00AM - 5:00PM, <span class="highlight">Sunday CLOSED</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container nav-content">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="disclosures.html">Disclosures</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Calendar Hero Section -->
+    <section class="calendar-hero">
+        <div class="container">
+            <h1>Academic Calendar 2024-2025</h1>
+            <p>Stay updated with all important dates, holidays, examinations, and school events throughout the academic year.</p>
+        </div>
+    </section>
+    
+    <!-- Calendar Container -->
+    <section class="calendar-container">
+        <div class="container">
+            <div class="academic-year-selector">
+                <div class="year-title">Academic Year: July 2024 - April 2025</div>
+                <div class="month-navigation">
+                    <button class="nav-btn" id="prevMonth">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="current-month" id="currentMonth">July 2024</div>
+                    <button class="nav-btn" id="nextMonth">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <div class="day-header">Sun</div>
+                    <div class="day-header">Mon</div>
+                    <div class="day-header">Tue</div>
+                    <div class="day-header">Wed</div>
+                    <div class="day-header">Thu</div>
+                    <div class="day-header">Fri</div>
+                    <div class="day-header">Sat</div>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FF6B6B;"></div>
+                    <div class="legend-text">Holidays</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #26C6DA;"></div>
+                    <div class="legend-text">Examinations</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #66BB6A;"></div>
+                    <div class="legend-text">School Functions</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FFA726;"></div>
+                    <div class="legend-text">Other Events</div>
+                </div>
+            </div>
+            
+            <!-- Upcoming Events -->
+            <div class="upcoming-events">
+                <h2>Upcoming Important Dates</h2>
+                <div class="events-list" id="upcomingEvents">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="50">
+                        <h2>Carmel High School</h2>
+                    </div>
+                    <p class="footer-description">Providing Quality Education since 1992. We nurture young minds for a brighter future with values, discipline, and academic excellence.</p>
+                    <div class="social-icons">
+                        <a href="tel:9405155294"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/carmels761/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="disclosures.html">Disclosures</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank">
+                            <p><i class="fas fa-map-marker-alt"></i> Carmel High School & Junior College Dhanora Road, Dist. Gadchiroli 442605</p>
+                        </a>
+                        <a href="tel:9405155294" target="_blank">
+                            <p><i class="fas fa-phone"></i>+91 94051-55294</p>
+                        </a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank">
+                            <p><i class="fas fa-envelope"></i>carmels761@gmail.com</p>
+                        </a>
+                        <p><i class="fas fa-clock"></i> Office : 9:00AM - 3:15PM</p>
+                        <p><i class="fas fa-calendar"></i> Sunday: CLOSED</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Carmel High School, Gadchiroli. All rights reserved.</p>
+                <p>Designed by <a href="" style="text-decoration: none; color:azure">MAMBA MEDIA</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Academic Calendar Data
+        const academicCalendar = {
+            // Academic Year: July 2024 - April 2025
+            "2024": {
+                "7": { // July
+                    holidays: [15, 17, 29], // Dates that are holidays
+                    events: [
+                        { date: 1, type: 'function', title: 'Academic Session Begins' },
+                        { date: 15, type: 'holiday', title: 'Guru Purnima' },
+                        { date: 17, type: 'holiday', title: 'Bakri Eid' },
+                        { date: 29, type: 'holiday', title: 'Muharram' }
+                    ]
+                },
+                "8": { // August
+                    holidays: [15, 19],
+                    events: [
+                        { date: 15, type: 'holiday', title: 'Independence Day' },
+                        { date: 19, type: 'holiday', title: 'Raksha Bandhan' },
+                        { date: 26, type: 'function', title: 'Inter-House Competition Begins' }
+                    ]
+                },
+                "9": { // September
+                    holidays: [5, 7, 16],
+                    events: [
+                        { date: 5, type: 'function', title: 'Teachers Day Celebration' },
+                        { date: 7, type: 'holiday', title: 'Ganesh Chaturthi' },
+                        { date: 16, type: 'holiday', title: 'Samvatsari' }
+                    ]
+                },
+                "10": { // October
+                    holidays: [2, 12, 31],
+                    events: [
+                        { date: 2, type: 'holiday', title: 'Gandhi Jayanti' },
+                        { date: 12, type: 'holiday', title: 'Dussehra' },
+                        { date: 28, type: 'exam', title: 'Half Yearly Exams Begin' },
+                        { date: 31, type: 'holiday', title: 'Diwali' }
+                    ]
+                },
+                "11": { // November
+                    holidays: [1, 15],
+                    events: [
+                        { date: 1, type: 'holiday', title: 'Diwali Holidays' },
+                        { date: 15, type: 'holiday', title: 'Gurunanak Jayanti' },
+                        { date: 25, type: 'function', title: 'Parent-Teacher Meeting' }
+                    ]
+                },
+                "12": { // December
+                    holidays: [25],
+                    events: [
+                        { date: 25, type: 'holiday', title: 'Christmas' },
+                        { date: 28, type: 'function', title: 'Annual Day Rehearsals' }
+                    ]
+                }
+            },
+            "2025": {
+                "1": { // January
+                    holidays: [1, 14, 26],
+                    events: [
+                        { date: 1, type: 'holiday', title: 'New Year' },
+                        { date: 14, type: 'holiday', title: 'Makar Sankranti' },
+                        { date: 15, type: 'function', title: 'Republic Day Rehearsals' },
+                        { date: 26, type: 'holiday', title: 'Republic Day' },
+                        { date: 28, type: 'exam', title: 'Unit Test - 3' }
+                    ]
+                },
+                "2": { // February
+                    holidays: [],
+                    events: [
+                        { date: 15, type: 'function', title: 'Science Exhibition' },
+                        { date: 21, type: 'exam', title: 'Pre-Board Exams (Class 10)' }
+                    ]
+                },
+                "3": { // March
+                    holidays: [8, 17, 22],
+                    events: [
+                        { date: 8, type: 'holiday', title: 'Maha Shivratri' },
+                        { date: 10, type: 'exam', title: 'Board Exams Begin (Class 10)' },
+                        { date: 17, type: 'holiday', title: 'Holi' },
+                        { date: 22, type: 'holiday', title: 'Ugadi' }
+                    ]
+                },
+                "4": { // April
+                    holidays: [14, 18],
+                    events: [
+                        { date: 14, type: 'holiday', title: 'Dr. Ambedkar Jayanti' },
+                        { date: 18, type: 'holiday', title: 'Good Friday' },
+                        { date: 25, type: 'function', title: 'Academic Year Ends' }
+                    ]
+                }
+            }
+        };
+
+        // Current date
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth() + 1; // 1-12
+        
+        // Adjust for academic year (July-April)
+        if (currentMonth >= 1 && currentMonth <= 6) {
+            // If current month is Jan-Jun, show previous academic year
+            currentYear = 2024;
+            currentMonth = 7; // Start from July
+        } else {
+            // If current month is Jul-Dec, show current academic year
+            currentYear = 2024;
+            currentMonth = currentMonth;
+        }
+
+        // Day names
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const dayFullNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+
+        // Initialize Calendar
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCalendar(currentYear, currentMonth);
+            
+            // Navigation buttons
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                navigateMonth(-1);
+            });
+            
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                navigateMonth(1);
+            });
+            
+            // Update mobile menu for this page
+            const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+            mobileLinks.forEach(link => {
+                if (link.getAttribute('href') === 'calendar.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Render calendar for specific month and year
+        function renderCalendar(year, month) {
+            const calendarGrid = document.getElementById('calendarGrid');
+            const currentMonthElement = document.getElementById('currentMonth');
+            
+            // Update month title
+            currentMonthElement.textContent = `${monthNames[month-1]} ${year}`;
+            
+            // Clear previous calendar
+            calendarGrid.innerHTML = '';
+            
+            // Get first day of month
+            const firstDay = new Date(year, month-1, 1);
+            const startingDay = firstDay.getDay(); // 0-6 (Sun-Sat)
+            
+            // Get days in month
+            const daysInMonth = new Date(year, month, 0).getDate();
+            
+            // Get month data from academic calendar
+            const monthData = academicCalendar[year]?.[month] || { holidays: [], events: [] };
+            const holidays = monthData.holidays || [];
+            const events = monthData.events || [];
+            
+            // Create empty cells for days before first day of month
+            for (let i = 0; i < startingDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day empty-day';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Create cells for each day of the month
+            const today = new Date();
+            const isCurrentMonth = today.getFullYear() === year && today.getMonth() + 1 === month;
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                const dayOfWeek = new Date(year, month-1, day).getDay();
+                
+                // Check if today
+                const isToday = isCurrentMonth && day === today.getDate();
+                
+                // Check if holiday
+                const isHoliday = holidays.includes(day);
+                
+                // Get events for this day
+                const dayEvents = events.filter(event => event.date === day);
+                
+                // Set class
+                let dayClass = 'calendar-day';
+                if (isHoliday) dayClass += ' holiday';
+                
+                dayElement.className = dayClass;
+                dayElement.setAttribute('data-day', dayFullNames[dayOfWeek]);
+                
+                // Day number
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                if (isToday) dayNumber.classList.add('today');
+                dayNumber.textContent = day;
+                
+                // Day events
+                const dayEventsContainer = document.createElement('div');
+                dayEventsContainer.className = 'day-events';
+                
+                dayEvents.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.className = `event ${event.type}`;
+                    
+                    // Use smaller icons for mobile
+                    const eventIcon = event.type === 'holiday' ? 'fa-umbrella-beach' : 
+                                     event.type === 'exam' ? 'fa-file-alt' : 
+                                     event.type === 'function' ? 'fa-calendar-alt' : 'fa-star';
+                    
+                    eventElement.innerHTML = `<i class="fas ${eventIcon}"></i> <span class="event-title">${event.title}</span>`;
+                    dayEventsContainer.appendChild(eventElement);
+                });
+                
+                dayElement.appendChild(dayNumber);
+                dayElement.appendChild(dayEventsContainer);
+                calendarGrid.appendChild(dayElement);
+            }
+            
+            // Update upcoming events
+            updateUpcomingEvents(year, month);
+        }
+
+        // Navigate to previous/next month
+        function navigateMonth(direction) {
+            currentMonth += direction;
+            
+            // Handle year transition for academic calendar (July-April)
+            if (currentMonth > 12) {
+                currentMonth = 1;
+                currentYear++;
+            } else if (currentMonth < 1) {
+                currentMonth = 12;
+                currentYear--;
+            }
+            
+            // Check if month is within academic year (July-April)
+            // If we navigate to May or June, adjust to academic year boundaries
+            if (currentMonth >= 5 && currentMonth <= 6) {
+                if (direction === 1) {
+                    // If moving forward from April to May, go to next July
+                    currentMonth = 7;
+                    currentYear++;
+                } else if (direction === -1) {
+                    // If moving backward from July to June, go to previous April
+                    currentMonth = 4;
+                    currentYear--;
+                }
+            }
+            
+            renderCalendar(currentYear, currentMonth);
+        }
+
+        // Update upcoming events section
+        function updateUpcomingEvents(year, month) {
+            const upcomingEvents = document.getElementById('upcomingEvents');
+            upcomingEvents.innerHTML = '';
+            
+            // Get events for current and next month
+            const events = [];
+            const currentMonthEvents = academicCalendar[year]?.[month]?.events || [];
+            const nextMonth = month === 12 ? 1 : month + 1;
+            const nextYear = month === 12 ? year + 1 : year;
+            const nextMonthEvents = academicCalendar[nextYear]?.[nextMonth]?.events || [];
+            
+            // Add current month events
+            currentMonthEvents.forEach(event => {
+                if (event.date >= new Date().getDate()) {
+                    events.push({
+                        ...event,
+                        year,
+                        month,
+                        day: event.date
+                    });
+                }
+            });
+            
+            // Add next month events
+            nextMonthEvents.forEach(event => {
+                events.push({
+                    ...event,
+                    year: nextYear,
+                    month: nextMonth,
+                    day: event.date
+                });
+            });
+            
+            // Sort events by date
+            events.sort((a, b) => {
+                if (a.year === b.year) {
+                    if (a.month === b.month) {
+                        return a.day - b.day;
+                    }
+                    return a.month - b.month;
+                }
+                return a.year - b.year;
+            });
+            
+            // Display first 6 upcoming events
+            events.slice(0, 6).forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.className = 'event-item';
+                
+                const eventIcon = event.type === 'holiday' ? 'fa-umbrella-beach' :
+                                event.type === 'exam' ? 'fa-file-alt' :
+                                event.type === 'function' ? 'fa-calendar-alt' : 'fa-star';
+                
+                eventElement.innerHTML = `
+                    <div class="event-date">
+                        <div class="event-day">${event.day}</div>
+                        <div class="event-month">${monthNames[event.month-1].substring(0, 3)}</div>
+                    </div>
+                    <div class="event-details">
+                        <h3>${event.title}</h3>
+                        <p><i class="fas ${eventIcon}"></i> ${event.type.charAt(0).toUpperCase() + event.type.slice(1)}</p>
+                    </div>
+                `;
+                
+                upcomingEvents.appendChild(eventElement);
+            });
+        }
+    </script>
+</body>
+</html>

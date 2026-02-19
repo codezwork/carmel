@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Campus & Events at Carmel School Gadchiroli</title>
+    <meta name="description" content="Explore photos of Carmel High School's modern campus, science labs, playground, and cultural events. See why we are the best school in Gadchiroli for student life.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="images/carmel-school-gad.webp">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Carmel High School Gadchiroli",
+    "alternateName": ["Carmel High School & Junior College", "Carmel CBSE Gadchiroli"],
+    "url": "https://carmelcbsegad.org",
+    "logo": "https://carmelcbsegad.org/images/carmel-school-gad.webp",
+    "image": "https://carmelcbsegad.org/images/school-front.webp",
+    "description": "Carmel High School Gadchiroli is a premier CBSE educational institution established in 1992, offering holistic education in Gadchiroli.",
+    "foundingDate": "1992",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhanora Road",
+        "addressLocality": "Gadchiroli",
+        "addressRegion": "Maharashtra",
+        "postalCode": "442605",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94051-55294",
+        "contactType": "admissions",
+        "email": "carmels761@gmail.com",
+        "areaServed": "Gadchiroli",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
+    "sameAs": [
+        "https://www.facebook.com/carmels761/",
+        "https://www.instagram.com/carmels1992/",
+        "https://www.youtube.com/@carmelhighschoolgadchiroli1837"
+    ],
+    "openingHoursSpecification": [
+        {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "15:15"
+        }
+    ]
+    }
+    </script>
+    <style>
+        /* Dynamic Gallery Styles */
+        .dynamic-gallery-section {
+            padding: 10px 0;
+            background-color: var(--primary-gray);
+            position: relative;
+        }
+        
+        /* Desktop Filter Buttons */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid var(--primary-red);
+            border-radius: var(--border-radius);
+            color: var(--primary-red);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-red);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Mobile Dropdown Menu */
+        .mobile-filter-dropdown {
+            display: none;
+            margin-bottom: 30px;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: white;
+            border: 2px solid var(--primary-red);
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+        
+        .dropdown-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            right: 20px;
+            background-color: white;
+            border: 2px solid var(--primary-red);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            z-index: 100;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-menu.open {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .dropdown-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-item:hover,
+        .dropdown-item.active {
+            background-color: var(--primary-red);
+            color: white;
+        }
+        
+        .dropdown-item:active {
+            background-color: var(--primary-dark-red);
+        }
+        
+        .dynamic-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+        }
+        
+        .dynamic-gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+            height: 280px;
+            cursor: pointer;
+        }
+        
+        .dynamic-gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dynamic-gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .dynamic-gallery-item:hover .dynamic-gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .dynamic-gallery-caption {
+            padding: 15px;
+        }
+        
+        .dynamic-gallery-caption h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .dynamic-gallery-category {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        /* LIGHTBOX/MODAL STYLES */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .lightbox-modal.active {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+        
+        .lightbox-caption h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .lightbox-caption p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .lightbox-category {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            background: none;
+            border: none;
+            font-size: 40px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        
+        /* Improved Infinite Carousel */
+        .infinite-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 30px 0 10px;
+            padding: 20px 0;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 30s linear infinite;
+        }
+        
+        /* Pause animation on hover */
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Keyframe for continuous infinite scroll */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 5 - 20px * 5));
+            }
+        }
+        
+        .carousel-track img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .carousel-track img:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        
+        .gallery-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .no-images-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            color: var(--text-gray);
+        }
+        
+        .gallery-admin-link {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        .admin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            /* Hide desktop buttons on mobile */
+            .gallery-filters {
+                display: none;
+            }
+            
+            /* Show mobile dropdown */
+            .mobile-filter-dropdown {
+                display: block;
+            }
+            
+            .dynamic-gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .carousel-track img {
+                width: 250px;
+                height: 150px;
+            }
+            
+            /* Lightbox adjustments for mobile */
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .lightbox-close {
+                top: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+            
+            .lightbox-counter {
+                top: 30px;
+                left: 20px;
+            }
+            
+            .lightbox-caption h3 {
+                font-size: 18px;
+            }
+            
+            .lightbox-caption p {
+                font-size: 14px;
+            }
+
+            .gallery-hero {
+                display: none;
+            }
+            
+            /* Adjust carousel animation for mobile */
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-250px * 5 - 20px * 5));
+                }
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dynamic-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dynamic-gallery-item {
+                height: 250px;
+            }
+            
+            .dynamic-gallery-img {
+                height: 170px;
+            }
+            
+            .carousel-track img {
+                width: 220px;
+                height: 140px;
+            }
+            
+            /* Lightbox adjustments for small mobile */
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            .lightbox-content {
+                max-width: 95%;
+            }
+            
+            .lightbox-img {
+                max-height: 65vh;
+            }
+            
+            /* Adjust carousel animation for small mobile */
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-220px * 5 - 20px * 5));
+                }
+            }
+        }
+        
+        /* Desktop-only styles */
+        @media (min-width: 769px) {
+            .mobile-filter-dropdown {
+                display: none;
+            }
+            
+            .gallery-filters {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Update the mobile-header section in index.html -->
+    <header class="mobile-header">
+        <div class="mobile-header-container"> <!-- Add this wrapper -->
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="10%">
+                    <h2>Carmel High School</h2>
+                </div>
+            </a>
+            <div class="hamburger" id="mobileHamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-links" id="mobileNavLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="disclosures.html">Disclosures</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contacts.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Desktop Header - Only visible on desktop -->
+    <header class="desktop-header">
+        <!-- Utility Bar -->
+        <div class="utility-bar">
+            <div class="container utility-content">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo">
+                    <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="5%">
+                    <h2>Carmel High School</h2>
+                </div>
+                </a>
+                <div class="utility-info">
+                    <div class="info-item">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" style="text-decoration: none; cursor: pointer" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <span class="location">Dhanora Road, Dist. Gadchiroli 442605</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <span>Mon-Sat 8:00AM - 5:00PM, <span class="highlight">Sunday CLOSED</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Opaque Navigation Bar -->
+        <nav class="main-nav">
+            <div class="container nav-content">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="disclosures.html">Disclosures</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>School Gallery</h1>
+            <p>Explore the vibrant life at Carmel High School through our photo gallery. Capture moments of learning, achievements, events, and daily school life.</p>
+        </div>
+    </section>
+    
+    <!-- Improved Infinite Carousel -->
+    <section class="container">
+        <div class="infinite-carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Images will be duplicated by JavaScript for seamless loop -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Dynamic Gallery Section -->
+    <section class="dynamic-gallery-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 10px; color: var(--primary-dark);">
+                Carmel High School Album
+            </h2>
+            
+            <!-- Desktop Category Filters -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-category="all">All Photos</button>
+                <button class="filter-btn" data-category="campus">Campus Life</button>
+                <button class="filter-btn" data-category="academic">Academic</button>
+                <button class="filter-btn" data-category="events">Events</button>
+                <button class="filter-btn" data-category="sports">Sports</button>
+                <button class="filter-btn" data-category="cultural">Cultural</button>
+                <button class="filter-btn" data-category="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-category="achievements">Achievements</button>
+            </div>
+            
+            <!-- Mobile Dropdown Filter -->
+            <div class="mobile-filter-dropdown">
+                <div class="dropdown-header" id="dropdownHeader">
+                    <span>All Photos</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-item active" data-category="all">All Photos</div>
+                    <div class="dropdown-item" data-category="campus">Campus Life</div>
+                    <div class="dropdown-item" data-category="academic">Academic</div>
+                    <div class="dropdown-item" data-category="events">Events & Celebrations</div>
+                    <div class="dropdown-item" data-category="sports">Sports & Games</div>
+                    <div class="dropdown-item" data-category="cultural">Cultural Activities</div>
+                    <div class="dropdown-item" data-category="infrastructure">Infrastructure</div>
+                    <div class="dropdown-item" data-category="achievements">Achievements</div>
+                </div>
+            </div>
+            
+            <!-- Dynamic Gallery Grid -->
+            <div id="dynamicGallery" class="dynamic-gallery-grid">
+                <div class="gallery-loading">
+                    <div class="gallery-spinner"></div>
+                    <p>Loading gallery images...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            
+            <img class="lightbox-img" id="lightboxImage" src="" alt="">
+            
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+                <p><small id="lightboxDate"></small></p>
+                <div class="lightbox-category" id="lightboxCategory"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/carmel-school-gad.webp" alt="Carmel High School Gadchiroli Logo" width="50">
+                        <h2>Carmel High School</h2>
+                    </div>
+                    <p class="footer-description">Providing Quality Education since 1992. We nurture young minds for a brighter future with values, discipline, and academic excellence.</p>
+                    <div class="social-icons">
+                        <a href="tel:9405155294"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        <a href="https://www.facebook.com/carmels761/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="disclosures.html">Disclosures</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <a href="https://maps.app.goo.gl/mGNbKYQAmGiyjG6eA" target="_blank">
+                            <p><i class="fas fa-map-marker-alt"></i> Carmel High School & Junior College Dhanora Road, Dist. Gadchiroli 442605</p>
+                        </a>
+                        <a href="tel:9405155294" target="_blank">
+                            <p><i class="fas fa-phone"></i>+91 94051-55294</p>
+                        </a>
+                        <a href="mailto:carmels761@gmail.com" target="_blank">
+                            <p><i class="fas fa-envelope"></i>carmels761@gmail.com</p>
+                        </a>
+                        <p><i class="fas fa-clock"></i> Office : 9:00AM - 3:15PM</p>
+                        <p><i class="fas fa-calendar"></i> Sunday: CLOSED</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Carmel High School, Gadchiroli. All rights reserved.</p>
+                <p>Designed by <a href="" style="text-decoration: none; color:azure">MAMBA MEDIA</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script type="module">
+        // 1. Import Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // 2. Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-ZK1L8Tn46uNggFaWAVXsMpcs32RcQlE",
+            authDomain: "carmel-gallery-database.firebaseapp.com",
+            projectId: "carmel-gallery-database",
+            storageBucket: "carmel-gallery-database.firebasestorage.app",
+            messagingSenderId: "608667644518",
+            appId: "1:608667644518:web:e92f6446e8761f497a33a7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const COLLECTION_NAME = "gallery";
+
+        // ============================================
+        // STATE MANAGEMENT
+        // ============================================
+        
+        let galleryImages = [];          // Master list from DB
+        let currentFilter = 'all';
+        let currentDisplayedImages = []; // The list the lightbox is currently iterating over
+        let mainGalleryList = [];        // NEW: Stores the full list of images currently visible in the grid
+        let currentImageIndex = 0;
+        
+        const categoryLabels = {
+            'campus': 'Campus Life',
+            'academic': 'Academic',
+            'events': 'Events & Celebrations',
+            'sports': 'Sports & Games',
+            'cultural': 'Cultural Activities',
+            'infrastructure': 'Infrastructure',
+            'achievements': 'Achievements',
+            'faculty': 'Faculty & Staff',
+            'student-life': 'Student Life'
+        };
+
+        // ============================================
+        // MAIN LOAD FUNCTION
+        // ============================================
+        async function loadGallery() {
+            const galleryContainer = document.getElementById('dynamicGallery');
+            
+            try {
+                galleryContainer.innerHTML = `
+                    <div class="gallery-loading">
+                        <div class="gallery-spinner"></div>
+                        <p>Loading gallery images...</p>
+                    </div>
+                `;
+                
+                // Get data from Firestore
+                const q = query(collection(db, COLLECTION_NAME), orderBy("timestamp", "desc"));
+                const querySnapshot = await getDocs(q);
+                
+                galleryImages = [];
+                querySnapshot.forEach((doc) => {
+                    galleryImages.push({ id: doc.id, ...doc.data() });
+                });
+                
+                // 1. Display the Grid
+                displayGallery(galleryImages);
+                
+                // 2. Setup Filters (Desktop & Mobile)
+                setupDesktopFilters();
+                setupMobileDropdown();
+                
+                // 3. Setup Top Carousel
+                setupInfiniteCarousel(galleryImages);
+                
+            } catch (error) {
+                console.error("Firebase Error:", error);
+                galleryContainer.innerHTML = `<div class="no-images-message">Error loading gallery. Please try again later.</div>`;
+            }
+        }
+
+        // ============================================
+        // CAROUSEL LOGIC
+        // ============================================
+        function setupInfiniteCarousel(images) {
+            const track = document.getElementById('carouselTrack');
+            if (!track) return;
+            
+            const sourceImages = (images && images.length > 0) ? images : []; 
+            if (sourceImages.length === 0) return; 
+
+            track.innerHTML = '';
+            
+            // Pick top 8 images
+            const carouselImages = sourceImages.slice(0, 8);
+            const displaySets = 3;
+            
+            for (let i = 0; i < displaySets; i++) {
+                carouselImages.forEach((img) => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = img.imageUrl;
+                    imgElement.alt = img.caption;
+                    imgElement.onerror = function() { this.style.display = 'none'; };
+                    
+                    // Click Listener
+                    imgElement.addEventListener('click', () => {
+                        openCarouselImageInLightbox(img);
+                    });
+                    
+                    track.appendChild(imgElement);
+                });
+            }
+        }
+
+        function openCarouselImageInLightbox(image) {
+            // Carousel specific: Lightbox only shows this ONE image
+            currentDisplayedImages = [image];
+            currentImageIndex = 0;
+            updateLightbox();
+            document.getElementById('lightboxModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // ============================================
+        // MOBILE DROPDOWN LOGIC
+        // ============================================
+        function setupMobileDropdown() {
+            const dropdownHeader = document.getElementById('dropdownHeader');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            
+            if (!dropdownHeader || !dropdownMenu) return;
+
+            dropdownHeader.onclick = (e) => {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('open');
+                dropdownHeader.classList.toggle('active');
+            };
+
+            document.addEventListener('click', (e) => {
+                if (!dropdownHeader.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    dropdownMenu.classList.remove('open');
+                    dropdownHeader.classList.remove('active');
+                }
+            });
+
+            dropdownItems.forEach(item => {
+                item.onclick = function() {
+                    dropdownItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const selectedText = this.textContent;
+                    dropdownHeader.querySelector('span').textContent = selectedText;
+                    
+                    dropdownMenu.classList.remove('open');
+                    dropdownHeader.classList.remove('active');
+                    
+                    currentFilter = this.getAttribute('data-category');
+                    displayGallery(galleryImages);
+                };
+            });
+        }
+
+        // ============================================
+        // DISPLAY & FILTERING
+        // ============================================
+        function displayGallery(images) {
+            const galleryContainer = document.getElementById('dynamicGallery');
+            
+            if (!images || images.length === 0) {
+                galleryContainer.innerHTML = `
+                    <div class="no-images-message">
+                        <i class="fas fa-images" style="font-size: 48px; color: #ddd; margin-bottom: 15px;"></i>
+                        <h3>No images found</h3>
+                        <p>Check back soon for updates!</p>
+                    </div>
+                `;
+                currentDisplayedImages = [];
+                mainGalleryList = []; // Clear main list
+                return;
+            }
+            
+            let filteredImages = images;
+            if (currentFilter !== 'all') {
+                filteredImages = images.filter(img => img.category === currentFilter);
+            }
+            
+            // KEY FIX: Update the persistent "Grid State"
+            mainGalleryList = filteredImages;
+            // Also sync current displayed images (initial state)
+            currentDisplayedImages = mainGalleryList;
+            
+            let html = '';
+            // We use filteredImages here to generate the HTML
+            filteredImages.forEach((image, index) => {
+                html += `
+                    <div class="dynamic-gallery-item" onclick="openLightbox(${index})">
+                        <img src="${image.imageUrl}" 
+                             alt="${image.altText || image.caption}" 
+                             class="dynamic-gallery-img"
+                             onerror="this.src='images/placeholder.jpg'">
+                        <div class="dynamic-gallery-caption">
+                            <h3>${image.caption}</h3>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            galleryContainer.innerHTML = html || `
+                <div class="no-images-message"><h3>No images found in this category</h3></div>
+            `;
+        }
+
+        function setupDesktopFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.getAttribute('data-category');
+                    displayGallery(galleryImages);
+                });
+            });
+        }
+
+        // ============================================
+        // LIGHTBOX FUNCTIONS
+        // ============================================
+        
+        window.openLightbox = function(index) {
+            // KEY FIX: Restore the "Grid List" to the lightbox.
+            // This ensures that if the Carousel was clicked previously (which reduces the list to 1),
+            // we overwrite it back to the full album list.
+            currentDisplayedImages = mainGalleryList;
+
+            currentImageIndex = index;
+            updateLightbox();
+            document.getElementById('lightboxModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        window.closeLightbox = function() {
+            document.getElementById('lightboxModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        window.updateLightbox = function() {
+            if (!currentDisplayedImages || currentDisplayedImages.length === 0) return;
+            
+            // Safety check for index
+            if (currentImageIndex >= currentDisplayedImages.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = 0;
+            
+            const image = currentDisplayedImages[currentImageIndex];
+            
+            document.getElementById('lightboxImage').src = image.imageUrl;
+            document.getElementById('lightboxTitle').textContent = image.caption;
+            document.getElementById('lightboxCategory').textContent = categoryLabels[image.category] || image.category;
+            
+            const dateStr = image.timestamp ? new Date(image.timestamp).toLocaleDateString('en-IN', {
+                day: 'numeric', month: 'short', year: 'numeric'
+            }) : '';
+            document.getElementById('lightboxDate').textContent = dateStr;
+            
+            document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${currentDisplayedImages.length}`;
+            
+            // Show/Hide Arrows based on list length
+            document.getElementById('lightboxPrev').style.display = (currentDisplayedImages.length > 1) ? 'flex' : 'none';
+            document.getElementById('lightboxNext').style.display = (currentDisplayedImages.length > 1) ? 'flex' : 'none';
+        }
+
+        window.nextImage = function() {
+            if (currentImageIndex < currentDisplayedImages.length - 1) {
+                currentImageIndex++;
+                updateLightbox();
+            } else {
+                // Optional: Loop back to start
+                currentImageIndex = 0;
+                updateLightbox();
+            }
+        }
+        
+        window.prevImage = function() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                updateLightbox();
+            } else {
+                // Optional: Loop to end
+                currentImageIndex = currentDisplayedImages.length - 1;
+                updateLightbox();
+            }
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+             const closeBtn = document.getElementById('lightboxClose');
+             const prevBtn = document.getElementById('lightboxPrev');
+             const nextBtn = document.getElementById('lightboxNext');
+             
+             if(closeBtn) closeBtn.addEventListener('click', window.closeLightbox);
+             if(prevBtn) prevBtn.addEventListener('click', window.prevImage);
+             if(nextBtn) nextBtn.addEventListener('click', window.nextImage);
+             
+             window.loadGallery = loadGallery;
+             loadGallery();
+        });
+
+    </script>
+</body>
+</html>
