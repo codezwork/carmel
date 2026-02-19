@@ -1,1 +1,1 @@
-here we upload images
+this is where we will be saving all the static images for the website
